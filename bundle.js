@@ -90,6 +90,11 @@ flux.on("dispatch", function(type, payload) {
   }
 });
 
+flux.setDispatchInterceptor(function(action, dispatch) {
+  console.log('dispatch interceptor...');
+  dispatch(action);
+});
+
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
